@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Appreciation";
+}
+@model Appreciation.Models.MessageViewModel
+
+<div class="text-center">
+    <i>Appreciation is a wonderful thing. It makes what is excellent in others belong to us as well</i>
+    -<b>Voltaire</b>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for=AppreciateToName class="control-label"></label>
+                <input asp-for=AppreciateToName class="form-control" />
+                <span asp-validation-for=AppreciateToName class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=AppreciationMessage class="control-label"></label>
+                <textarea asp-for=AppreciationMessage class="form-control" id="CreateContentTextArea"></textarea>
+                <span asp-validation-for=AppreciationMessage class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=NameOfPoster class="control-label"></label>
+                <input asp-for=NameOfPoster class="form-control" />
+                <span asp-validation-for=NameOfPoster class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for=ShowAppreciatorName class="control-label"></label>
+                <input type="checkbox" asp-for=ShowAppreciatorName class="form-control" id="ShowAppreciatorName" />
+                <span asp-validation-for=ShowAppreciatorName class="text-danger"></span>
+               
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-secondary" />
+            </div>
+        </form>
+    </div>
+</div>

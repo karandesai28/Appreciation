@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Appreciations";
+}
+@model List<Appreciation.Models.MessageViewModel>
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model == null || Model.Count==0)
+{
+    <span>"List is empty"</span>
+}
+else
+{
+    
+    @foreach (var item in Model)
+    {
+        <br/>
+        <br/>
+        <span>Hello,</span><span><b>@item.AppreciateToName</b></span><br />
+        <span>@item.AppreciationMessage</span><br />
+        
+        if (@item.ShowAppreciatorName)
+        {
+            <span>From,</span> <span>@item.NameOfPoster</span><br/>
+        }
+
+    }
+}
+
+
+
